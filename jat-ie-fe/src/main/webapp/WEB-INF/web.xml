@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+			xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+	id="WebApp_ID" version="3.0">
+    <display-name>IE-Higienópolis</display-name>  
+	<servlet>
+	    <servlet-name>Faces Servlet</servlet-name>
+	    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>Faces Servlet</servlet-name>
+	    <url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+  	<welcome-file-list>
+    	<welcome-file>/pages/login.xhtml</welcome-file>
+  	</welcome-file-list>
+  
+  	<!-- PrimeFaces -->
+	<context-param>
+    	<param-name>primefaces.THEME</param-name>
+    	<param-value>humanity</param-value>
+  	</context-param>
+	
+	<!-- CONFIGURACAO JAAS -->
+<!-- 	<security-constraint>	 -->
+<!--         <web-resource-collection> -->
+<!--             <web-resource-name>jasJATLogin</web-resource-name> -->
+<!--             <url-pattern>/cadastro/*</url-pattern> -->
+<!--             <url-pattern>/matricula/*</url-pattern> -->
+<!--         </web-resource-collection> -->
+        
+<!--         <auth-constraint> -->
+<!--             <role-name>SECRETARIA_ROLE</role-name> -->
+<!--         </auth-constraint> -->
+        
+<!--     </security-constraint> -->
+    
+<!--     <security-constraint> -->
+<!--         <web-resource-collection> -->
+<!--             <web-resource-name>Diretor e Aluno</web-resource-name> -->
+<!--             <url-pattern>/matricula/consultarMatricula.xhtml</url-pattern> -->
+<!--         </web-resource-collection> -->
+        
+<!--         <auth-constraint> -->
+<!--             <role-name>DIRETOR_ALUNO_ROLE</role-name> -->
+<!--         </auth-constraint> -->
+        
+<!--     </security-constraint> -->
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>todos os usuario logados</web-resource-name>
+            <url-pattern>/pages/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Publics</role-name>  
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-constraint>  
+          <web-resource-collection>  
+                <web-resource-name>HTTP PAGES</web-resource-name>  
+                <url-pattern>/*</url-pattern>  
+                <http-method>GET</http-method>  
+                <http-method>POST</http-method>  
+          </web-resource-collection>  
+          <user-data-constraint>  
+               <transport-guarantee>CONFIDENTIAL</transport-guarantee>  
+          </user-data-constraint>  
+   </security-constraint>  
+  
+<!--   <security-role> -->
+<!-- 			<role-name>SECRETARIA_ROLE</role-name> -->
+<!--   </security-role> -->
+
+ 	<login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>jasIELogin</realm-name>
+        <form-login-config>
+            <form-login-page>/pages/login.xhtml</form-login-page>
+            <form-error-page>/pages/login_erro.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <error-page>
+    	<error-code>403</error-code>
+    	<location>/pages/erro403.xhtml</location>
+    </error-page>
+
+
+	<security-role>
+      <role-name>Publics</role-name>
+    </security-role>
+  	<security-role>
+      <role-name>Developers</role-name>
+    </security-role>
+    <security-role>
+      <role-name>Administrators</role-name>
+    </security-role>
+</web-app>

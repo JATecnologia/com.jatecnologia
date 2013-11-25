@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        version="2.0">
+        <persistence-unit name="jatLoginPU" transaction-type="JTA">
+                <provider>org.hibernate.ejb.HibernatePersistence</provider>                
+                <jta-data-source>java:/ie-ds</jta-data-source>
+                <class>com.jatecnologia.ie.core.entity.IECustomerAddress</class>
+                <class>com.jatecnologia.ie.core.entity.IECustomerContact</class>
+                <class>com.jatecnologia.ie.core.entity.IECutomer</class>
+                <class>com.jatecnologia.ie.core.entity.IEGroup</class>
+                <class>com.jatecnologia.ie.core.entity.IELanguage</class>
+                <class>com.jatecnologia.ie.core.entity.IEProduct</class>
+                <class>com.jatecnologia.ie.core.entity.IETransaction</class>
+                <class>com.jatecnologia.ie.core.entity.IETransactionStatus</class>
+                <class>com.jatecnologia.ie.core.entity.IEUser</class>
+                <class>com.jatecnologia.ie.core.entity.IEUserGroup</class>
+                <class>com.jatecnologia.ie.core.entity.IEUserGroupPK</class>
+                <properties>
+                        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+                        <property name="hibernate.show_sql" value="false" />
+                        <property name="hibernate.format_sql" value="true" />
+                        <property name="hibernate.archive.autodetection" value="class, hbm" />
+                        <!-- Config mágica para evitar NPEs: https://community.jboss.org/thread/177282 -->
+                        <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+                        <!-- Desabilita Hibernate Envers https://hibernate.onjira.com/browse/HHH-6784 -->
+                        <property name="hibernate.listeners.envers.autoRegister" value="false" />
+                </properties>
+        </persistence-unit>
+</persistence>
