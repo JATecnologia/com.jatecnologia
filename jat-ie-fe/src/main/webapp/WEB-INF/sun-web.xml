@@ -25,7 +25,7 @@
 	</security-role-mapping>
 	
 	<security-role-mapping>
-		<role-name>ADMIN_ROLE</role-name>		
+		<role-name>Administrators</role-name>		
 		<group-name>Administrators</group-name>
 	</security-role-mapping>
 	<security-role-mapping>

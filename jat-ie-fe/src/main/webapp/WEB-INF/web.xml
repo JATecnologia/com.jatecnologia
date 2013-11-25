@@ -23,7 +23,28 @@
   	</context-param>
 	
 	<!-- CONFIGURACAO JAAS -->
-
+  <security-constraint>  
+          <web-resource-collection>  
+                <web-resource-name>HTTP PAGES</web-resource-name>  
+                <url-pattern>/*</url-pattern>  
+                <http-method>GET</http-method>  
+                <http-method>POST</http-method>  
+          </web-resource-collection>  
+          <user-data-constraint>  
+               <transport-guarantee>CONFIDENTIAL</transport-guarantee>  
+          </user-data-constraint>  
+   </security-constraint> 
+   
+<!--    <security-constraint> -->
+<!--         <web-resource-collection> -->
+<!--             <web-resource-name>Administrator</web-resource-name> -->
+<!--             <url-pattern>/pages/home.xhtml</url-pattern> -->
+<!--         </web-resource-collection>         -->
+<!--         <auth-constraint> -->
+<!--             <role-name>Administrators</role-name> -->
+<!--         </auth-constraint> -->
+        
+<!--     </security-constraint> -->
 
  	<security-constraint>
         <web-resource-collection>
@@ -31,7 +52,7 @@
             <url-pattern>/pages/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>PUBLIC_ROLE</role-name>  
+            <role-name>Administrators</role-name>  
         </auth-constraint>
     </security-constraint>
 
@@ -53,9 +74,9 @@
       <role-name>PUBLIC_ROLE</role-name>
     </security-role>
   	<security-role>
-      <role-name>Developers</role-name>
+      <role-name>Administrators</role-name>
     </security-role>
     <security-role>
-      <role-name>Administrators</role-name>
+      <role-name>DEV_ROLE</role-name>
     </security-role>
 </web-app>

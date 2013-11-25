@@ -80,27 +80,13 @@ public class LoginMB implements Serializable{
 					
 					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("Administrators"));
 					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("Developers"));
-//	
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("PUBLIC_ROLE"));
-//	
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("ADMIN_ROLE"));
-//	
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("SECRETARIA"));
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("ADMIN"));
-//	
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("DIRETOR"));
-//	
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("SECRETARIA"));
-//					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("ALUNO"));
-//					
-//					System.out.println(request.isUserInRole("SECRETARIA_ROLE"));
-//					System.out.println(request.isUserInRole("DIRETOR_ALUNO_ROLE"));
-//					System.out.println(request.isUserInRole("PUBLIC_ROLE"));
-//					System.out.println(request.isUserInRole("ADMIN_ROLE"));
-//					
-//					System.out.println(request.isUserInRole("SECRETARIA"));
-//					System.out.println(request.isUserInRole("ADMIN"));
-//					System.out.println(request.isUserInRole("ALUNO"));
+					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("PUBLIC_ROLE"));
+					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("ADMIN_ROLE"));
+					System.out.println(FacesContext.getCurrentInstance().getExternalContext().isUserInRole("DEV_ROLE"));
+					System.out.println(request.isUserInRole("PUBLIC_ROLE"));
+					System.out.println(request.isUserInRole("Administrators"));
+					System.out.println(request.isUserInRole("ADMIN_ROLE"));
+					System.out.println(request.isUserInRole("DEV_ROLE"));
 				} catch (Throwable e) {
 					e.printStackTrace();
 					msg = new FacesMessage(FacesMessage.SEVERITY_WARN, "Login Error", "Invalid credentials");
