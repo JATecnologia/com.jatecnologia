@@ -13,4 +13,19 @@
     </resource-bundle>
     <message-bundle>ValidationMessages</message-bundle>    
   </application>
+  <navigation-rule>
+  	<navigation-case>
+        <from-outcome>sucessoLogin</from-outcome>
+        <to-view-id>/pages/home.xhtml</to-view-id>
+    	<redirect/>
+    </navigation-case>
+  </navigation-rule>
+    
+  <navigation-rule>
+  	<navigation-case>
+    	<from-outcome>erroLogin</from-outcome>
+        <to-view-id>/pages/login_erro.xhtml</to-view-id>
+        <redirect/>
+    </navigation-case>
+  </navigation-rule>
 </faces-config>

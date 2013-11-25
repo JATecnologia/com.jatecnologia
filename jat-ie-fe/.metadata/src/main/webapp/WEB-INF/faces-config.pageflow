@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13839310070240" configfile="/jat-ie-fe/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13839310070240" configfile="/jat-ie-fe/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf13853965481220" outlinks="pf13853965481232 pf13853965761175" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" id="pf13853965481234" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13853965481232" path="/pages/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/login_erro.xhtml" id="pf13853965761176" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13853965761175" path="/pages/login_erro.xhtml"/>
+  <links id="pf13853965481232" target="pf13853965481234" source="pf13853965481220" outcome="sucessoLogin" redirect="true"/>
+  <links id="pf13853965761175" target="pf13853965761176" source="pf13853965481220" outcome="erroLogin" redirect="true"/>
+</pageflow:Pageflow>

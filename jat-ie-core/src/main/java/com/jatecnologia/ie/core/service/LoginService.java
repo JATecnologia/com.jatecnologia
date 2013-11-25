@@ -10,7 +10,8 @@ import com.jatecnologia.ie.core.entity.IEUser;
 
 @Stateless
 public class LoginService {
-	  @PersistenceContext
+	  
+	  @PersistenceContext(unitName="iePU")
 	  private EntityManager em;
 	  
 	  public IEUser findByLoginAndPassword(String login){

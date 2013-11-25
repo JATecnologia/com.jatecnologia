@@ -18,14 +18,11 @@
 <!-- 		<group-name>ADMIN</group-name> -->
 <!--  	</security-role-mapping> -->
 
-<!-- 	<security-role-mapping> -->
-<!-- 		<role-name>PUBLIC_ROLE</role-name> -->
-		
-<!-- 		<group-name>SECRETARIA</group-name> -->
-<!-- 		<group-name>DIRETOR</group-name> -->
-<!-- 		<group-name>ALUNO</group-name> -->
-<!-- 		<group-name>ADMIN</group-name> -->
-<!-- 	</security-role-mapping> -->
+	<security-role-mapping>
+		<role-name>PUBLIC_ROLE</role-name>		
+		<group-name>Administrators</group-name>
+		<group-name>Developers</group-name>		
+	</security-role-mapping>
 	
 	<security-role-mapping>
 		<role-name>ADMIN_ROLE</role-name>		

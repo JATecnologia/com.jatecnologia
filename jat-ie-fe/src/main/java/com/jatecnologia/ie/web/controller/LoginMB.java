@@ -3,11 +3,11 @@ package com.jatecnologia.ie.web.controller;
 
 import java.io.Serializable;
 
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
@@ -26,7 +26,7 @@ public class LoginMB implements Serializable{
 	private String login;
 	private String password;
 	
-	@Inject
+	@EJB
 	private LoginService	service;
 
 	public String getLogin() {
@@ -46,7 +46,7 @@ public class LoginMB implements Serializable{
 	}
 
 
-	  public void login(javax.faces.event.ActionEvent actionEvent) { 
+	  public String login() { 
         RequestContext context = RequestContext.getCurrentInstance();  
         FacesMessage msg = null;  
         boolean loggedIn = false;  
@@ -117,5 +117,7 @@ public class LoginMB implements Serializable{
           
         FacesContext.getCurrentInstance().addMessage(null, msg);  
         context.addCallbackParam("loggedIn", loggedIn);  
+        
+        return "sucessoLogin";
     }  
 }
