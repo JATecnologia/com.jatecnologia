@@ -7,25 +7,22 @@
 <ui:composition template="/template/template-login.xhtml">
 <ui:define name="body">
 	<h:form id="form">		
-	    <p:growl id="growl" showDetail="true" life="3000" />  	  	      
-	  
-	        <p:panelGrid columns="2" cellpadding="5">  
-	            <h:outputLabel for="username" value="#{msg['login-user']}:" />  
-	            <p:inputText value="#{loginMB.login}" id="username" required="true" label="username" />  
-	              
-	            <h:outputLabel for="password" value="#{msg['login-password']}:" />  
-	            <p:password value="#{loginMB.password}" id="password" required="true" label="password" />  
-	              
-	            <f:facet name="footer">  
-	                <p:commandButton id="loginButton" value="#{msg['login-button']}" update="growl"  type="submit"
-	                    action="#{loginMB.login}" />  
-	            </f:facet>  
-	        </p:panelGrid>  
-	        
+	    <p:growl id="growl" showDetail="true" life="3000" />
+ 	        <p:panelGrid columns="2" cellpadding="5">   
+	    		<f:facet name="header">#{msg['login-title']}</f:facet> 
+	            
+	            <h:outputLabel for="user" value="#{msg['login-user']}:" />  
+	            <p:inputText value="#{loginMB.login}" id="user" required="true" label="user" />  
+	        	<h:outputLabel for="password" value="#{msg['login-password']}:" />  
+	            <p:password value="#{loginMB.password}" id="password" required="true" label="password" />  	            
+	            <f:facet name="footer">
+		            <p:commandButton id="loginButton" value="#{msg['login-button']}" update="growl"  type="submit"
+		                    actionListener="#{loginMB.login}" styleClass="ui-priority-primary"/>  
+		            <p:commandButton id="limparButton" value="#{msg['login-button']}" update="growl"  type="submit"
+		                    actionListener="#{loginMB.login}" />  
+		        </f:facet>   
+ 	        </p:panelGrid>   
 	</h:form>
-
-
-	
 </ui:define>
 
 </ui:composition>

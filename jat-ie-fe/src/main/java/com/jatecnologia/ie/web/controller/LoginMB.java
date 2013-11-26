@@ -46,7 +46,7 @@ public class LoginMB implements Serializable{
 	}
 
 
-	  public String login() { 
+	  public String login(javax.faces.event.ActionEvent actionEvent) { 
         RequestContext context = RequestContext.getCurrentInstance();  
         FacesMessage msg = null;  
         boolean loggedIn = false;  

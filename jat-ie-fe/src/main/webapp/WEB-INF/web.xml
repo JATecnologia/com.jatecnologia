@@ -19,8 +19,8 @@
   	<!-- PrimeFaces -->
 	<context-param>
     	<param-name>primefaces.THEME</param-name>
-    	<param-value>humanity</param-value>
-  	</context-param>
+    	<param-value>bootstrap</param-value>
+	</context-param>
 	
 	<!-- CONFIGURACAO JAAS -->
   <security-constraint>  
